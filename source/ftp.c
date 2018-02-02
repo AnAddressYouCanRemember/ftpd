@@ -1805,12 +1805,13 @@ update_status(void)
     return -1;
   }
 
-  rc = gethostname(hostname, sizeof(hostname));
+  /*rc = gethostname(hostname, sizeof(hostname));
   if(rc != 0)
   {
     console_print(RED "gethostname: %d %s\n" RESET, errno, strerror(errno));
     return -1;
-  }
+  }*/
+  strcpy(hostname, "dummy");
 
   console_set_status(GREEN STATUS_STRING " "
 #ifdef ENABLE_LOGGING
